@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .black{
+            background-color: rgb(0, 0, 0);
+            width: 85px;
+            height: 85px;
+        }
+        .white{
+            background-color: rgb(247, 247, 247);
+            width: 85px;
+            height: 85px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table id="root" border="1">
+
+    </table>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+
+    let center = document.createElement('center');
+
+        let root = document.getElementById('root');
+
+        for(let i=1 ; i<=8 ; i++){
+            let tr = document.createElement('tr');
+        
+            if(i%2==1)
+            {
+                for(let j=1;j<=8;j++){
+            
+                    if(j%2==1){
+                        let td = document.createElement('td');
+                        td.setAttribute('class','white');
+                        tr.appendChild(td);
+                    }
+                    else{
+                        let td = document.createElement('td');
+                        td.setAttribute('class','black');
+                        tr.appendChild(td);
+                    }
+                }
+            }
+            else{
+                for(let j=1;j<=8;j++){
+                    if(j%2==1)
+                    {
+                        let td = document.createElement('td');
+                        td.setAttribute('class','black');
+                        tr.appendChild(td);
+                    }
+                    else{
+                        let td = document.createElement('td');
+                        td.setAttribute('class','white');
+                        tr.appendChild(td);
+                    }
+                }
+            }
+
+            root.appendChild(tr);
+    }
+        center.appendChild(root);
+
+        root.setAttribute('cellspacing', '0');
+        root.setAttribute('width', '900px');
+        document.body.appendChild(center);
+    
+    </script>
